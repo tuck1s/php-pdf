@@ -1,0 +1,7 @@
+composer.phar
+.idea/.name
+.idea/hello-world-heroku.iml
+.idea/inspectionProfiles/
+.idea/modules.xml
+.idea/php.xml
+.idea/workspace.xml
