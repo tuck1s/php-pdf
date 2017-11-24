@@ -1,0 +1,6 @@
+{
+  "name": "Convert file to PDF in PHP, for Heroku deployment",
+  "description": "Barebones demo",
+  "repository": "https://github.com/tuck1s/php-pdf",
+  "keywords": ["PHP"]
+}
