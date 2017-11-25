@@ -3,6 +3,9 @@
   "description": "Simple barebones app to demonstrate conversion into PDF using PHP",
   "license": "Apache-2.0",
   "require": {
-    "php": "^7.0.0"
+    "php": "^7.0.0",
+    "guzzlehttp/guzzle": "^6.3",
+    "php-http/guzzle6-adapter": "^1.1",
+    "sparkpost/sparkpost": "^2.1"
   }
 }
