@@ -1,4 +1,7 @@
 {
+  "name": "tuck1s/php-pdf",
+  "description": "Simple barebones app to demonstrate conversion into PDF using PHP",
+  "license": "Apache-2.0",
   "require": {
     "php": "^7.0.0"
   }
