@@ -1,9 +1,20 @@
 <?php
-use mikehaertl\pdftk\Pdf;
+//use mikehaertl\pdftk\Pdf;
 
 echo "PHP version " . phpversion();
+
 exec("pdftk --version", $out);
+echo '<pre>';
 print_r($out);
+echo  '</pre>';
+
+exec("wkhtmltopdf --version 2>&1", $out2);
+echo '<pre>';
+print_r($out2);
+echo  '</pre>';
+
+exec("wkhtmltopdf --page-size letter --dpi 300 --zoom 4 sample.html sample.pdf 2>&1");
+exec("open sample.pdf")
 
 /*
 // Fill form with data array
