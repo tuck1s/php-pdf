@@ -39,7 +39,8 @@ exec($wk . " --version 2>&1", $out);
 print_r($out); $out = NULL;
 
 $pdfDoc = "sample.pdf";                             //TODO: use temp files
-exec($wk . " --page-size letter --dpi 300 --zoom 4 sample.html $pdfDoc 2>&1", $out);
+                                                    //TODO: work out why older version gives more zoomed in PDF --zoom 4
+exec($wk . " --page-size letter --dpi 300 sample.html $pdfDoc 2>&1", $out);
 print_r($out); $out = NULL;
 
 // Cook the PDF file into required Base64 format
