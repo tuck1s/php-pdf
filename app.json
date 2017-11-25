@@ -1,6 +1,6 @@
 {
-  "name": "Experiment in converting files to PDF in PHP, for Heroku deployment",
-  "description": "Barebones demo",
+  "name": "php-pdf",
+  "description": "Experiment in converting files to PDF in PHP, for Heroku deployment",
   "repository": "https://github.com/tuck1s/php-pdf.git",
   "keywords": ["PHP"]
 }
