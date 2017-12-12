@@ -75,14 +75,14 @@ $password = getenv("TEMP_PDF_PASSWORD");
 if($password) {
     echo "PDF file encryption password (not yet implemented) will be " . $password . PHP_EOL;
 } else {
-    $password = "1234";
-    echo "Warning: TEMP_PDF_PASSWORD not set. Defaulting to " . $password . PHP_EOL;
+    echo "Error: TEMP_PDF_PASSWORD not set. Stopping." . PHP_EOL;
+    exit(1);
 }
 
 // TODO: This is just debug, outputting versions of the tools and environment
 echo "PHP version " . phpversion() . PHP_EOL;
 
-exec($wk . "rekl --version 2>&1", $out);
+exec($wk . " --version 2>&1", $out);
 print_r($out); $out = NULL;
 
 exec($pdftk . " --version 2>&1", $out);
@@ -103,7 +103,7 @@ echo "Generating PDF in temp file " . $pdfDoc . PHP_EOL;
 exec($wk . " --page-size letter --dpi 300 SuppressionListEntries.html recipientlistEntries.html EventlistEntries.html $pdfDoc 2>&1", $out);
 print_r($out); $out = NULL;
 
-exec($pdftk . " " . $pdfDoc . " output " . $pdfDocPasswordProtected . " encrypt_128bit user_pw fred verbose 2>&1", $out);
+exec($pdftk . " " . $pdfDoc . " output " . $pdfDocPasswordProtected . " encrypt_128bit user_pw " . $password . " verbose 2>&1", $out);
 print_r($out); $out = NULL;
 
 // Cook the PDF file into required Base64 format
