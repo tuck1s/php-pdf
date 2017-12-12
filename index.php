@@ -4,8 +4,10 @@
 // Author: Steve Tuck, November 2017
 //
 // External tool binary dependencies:
-//  wkhtmltopdf     -
-//  pdftk           -
+//  wkhtmltopdf - 0.12.3    - for local install see  https://github.com/wkhtmltopdf/wkhtmltopdf/releases/0.12.3/
+//                            Heroku uses app.json buildpack definition
+//
+//  pdftk       -
 //
 //  SparkPost PHP library - for more info see https://developers.sparkpost.com
 //      installation instructions on https://github.com/SparkPost/php-sparkpost
@@ -19,8 +21,8 @@ echo "<pre>";
 echo "PHP version " . phpversion() . PHP_EOL;
 
 $apiKey = getenv("SPARKPOST_API_KEY");
-if(!isset($apiKey)) {
-    echo "Error: SPARKPOST_API_KEY must be set";
+if(!$apiKey) {
+    echo "Error: SPARKPOST_API_KEY config variable must be set" . PHP_EOL;
     exit(1);
 }
 

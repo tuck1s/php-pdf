@@ -2,13 +2,27 @@
   "name": "php-pdf",
   "description": "Experiment in converting files to PDF in PHP, for Heroku deployment",
   "repository": "https://github.com/tuck1s/php-pdf.git",
-  "keywords": ["PHP"],
+  "keywords": [ "PHP", "SparkPost", "email", "PDF" ],
+  "website": "https://developers.sparkpost.com",
+  "logo": "https://developers.sparkpost.com/images/logo-sparkpost.png",
+
   "buildpacks": [
-    {
-      "url": "https://github.com/dscout/wkhtmltopdf-buildpack.git"
+    { "url": "https://github.com/dscout/wkhtmltopdf-buildpack.git" },
+    { "url": "heroku/php" }
+    ],
+  "env": {
+    "SPARKPOST_API_KEY": {
+      "description": "API key for your SparkPost account, must have Transmit and Template privileges, see https://app.sparkpost.com/account/credentials",
+      "required": true
     },
-    {
-      "url": "heroku/php"
+    "COVERING_MAIL_TEMPLATE": {
+      "description": "Name of your SparkPost template that will be used for the covering email",
+      "required": true
+    },
+    "PDF_TEMPLATE": {
+      "description": "Name of your SparkPost template that will be used for styling the attached report PDF",
+      "required": true
     }
-    ]
-}
+  }
+
+  }
