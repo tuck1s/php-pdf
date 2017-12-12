@@ -2,5 +2,13 @@
   "name": "php-pdf",
   "description": "Experiment in converting files to PDF in PHP, for Heroku deployment",
   "repository": "https://github.com/tuck1s/php-pdf.git",
-  "keywords": ["PHP"]
+  "keywords": ["PHP"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/dscout/wkhtmltopdf-buildpack.git"
+    },
+    {
+      "url": "heroku/php"
+    }
+    ]
 }
