@@ -10,7 +10,7 @@
     { "url": "https://github.com/dscout/wkhtmltopdf-buildpack.git" },
     { "url": "https://github.com/fxtentacle/heroku-pdftk-buildpack.git" },
     { "url": "heroku/php" }
-    ],
+  ],
   "env": {
     "SPARKPOST_API_KEY": {
       "description": "API key for your SparkPost account, must have Transmit and Template privileges, see https://app.sparkpost.com/account/credentials",
@@ -23,7 +23,14 @@
     "PDF_TEMPLATE": {
       "description": "Name of your SparkPost template that will be used for styling the attached report PDF",
       "required": true
+    },
+    "TEMP_RECIP": {
+      "description": "Temporary test variable. Enter the address of your recipient here (this will come from Jeff's code in the Production version)",
+      "required": true
+    },
+    "TEMP_PDF_PASSWORD": {
+      "description": "Temporary test variable. Enter the password to be used on the report PDF file (this will come from Jeff's code in the Production version)",
+      "required": true
     }
   }
-
-  }
+}
